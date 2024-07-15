@@ -1,0 +1,6 @@
+package com.example.codechallengeyape.domain.models
+
+data class Location(
+    val latitude: Double,
+    val longitude: Double,
+)
