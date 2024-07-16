@@ -1,50 +1,56 @@
 package com.example.codechallengeyape.presentation
 
-import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
+import android.view.View
 import androidx.activity.viewModels
-import androidx.appcompat.app.AppCompatActivity
 import androidx.core.os.bundleOf
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
-import androidx.fragment.app.Fragment
-import androidx.fragment.app.add
 import androidx.fragment.app.commit
 import androidx.fragment.app.replace
-import com.example.codechallengeyape.R
 import com.example.codechallengeyape.databinding.ActivityMainBinding
 import com.example.codechallengeyape.framework.viewModels.MainViewModel
+import com.example.codechallengeyape.presentation.base.BaseActivity
+import com.example.codechallengeyape.presentation.detail.DetailsFragment
 import com.example.codechallengeyape.presentation.home.HomeFragment
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class MainActivity : AppCompatActivity() {
+class MainActivity : BaseActivity() {
 
     private lateinit var binding: ActivityMainBinding
     private val viewModel: MainViewModel by viewModels()
 
     enum class Screens {
-        Home
+        Home,
+        Details
     }
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+    override fun createBinding(): View {
         binding = ActivityMainBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+        return binding.root
+    }
 
-        if (savedInstanceState == null) {
-            showFragment(Screens.Home)
+    override fun setupUiBehavior() {
+        showFragment(Screens.Home)
+    }
+
+    override fun subscribeToEvents() {
+        viewModel.currentScreen.observe(this) { screen ->
+            showFragment(screen)
         }
     }
 
     private fun showFragment(screens: Screens) {
         supportFragmentManager.commit {
+
             setReorderingAllowed(true)
+            val id = binding.mainContainer.id
 
             when(screens) {
                 Screens.Home -> {
-                    replace<HomeFragment>(binding.mainContainer.id, args = bundleOf())
+                    replace<HomeFragment>(id, args = bundleOf())
                     return@commit
+                }
+                Screens.Details -> {
+                    replace<DetailsFragment>(id)
                 }
             }
 

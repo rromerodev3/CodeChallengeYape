@@ -1,6 +1,5 @@
 package com.example.codechallengeyape.presentation.home
 
-import android.util.Log
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
@@ -9,6 +8,7 @@ import com.example.codechallengeyape.data.network.ResultData
 import com.example.codechallengeyape.databinding.FragmentHomeBinding
 import com.example.codechallengeyape.domain.models.Recipe
 import com.example.codechallengeyape.framework.viewModels.MainViewModel
+import com.example.codechallengeyape.presentation.MainActivity
 import com.example.codechallengeyape.presentation.base.BaseFragment
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -53,6 +53,7 @@ class HomeFragment: BaseFragment(), RecipesAdapter.RecipeCallback {
     }
 
     override fun onRecipeSelected(recipe: Recipe) {
-        Log.d("roydev", "onRecipeSelected(): $recipe")
+        parentViewModel.updateSelectedRecipe(recipe)
+        parentViewModel.goToScreen(MainActivity.Screens.Details)
     }
 }
