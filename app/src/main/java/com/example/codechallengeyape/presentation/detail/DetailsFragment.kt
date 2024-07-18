@@ -41,6 +41,7 @@ import com.example.codechallengeyape.databinding.FragmentDetailsBinding
 import com.example.codechallengeyape.domain.models.Location
 import com.example.codechallengeyape.domain.models.Recipe
 import com.example.codechallengeyape.framework.viewModels.MainViewModel
+import com.example.codechallengeyape.presentation.MainActivity
 import com.example.codechallengeyape.presentation.base.BaseFragment
 import com.example.codechallengeyape.presentation.theme.ChallengeAppTheme
 import com.gowtham.ratingbar.RatingBar
@@ -87,6 +88,7 @@ fun RecipeDetails(parentViewModel: MainViewModel) {
         RecipeDetailsContent(
             recipe = it,
             openLocation = {
+                parentViewModel.goToScreen(MainActivity.Screens.Location)
             }
         )
     }

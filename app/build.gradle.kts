@@ -89,6 +89,9 @@ dependencies {
 
     //compose-ratingbar
     implementation("io.github.a914-gowtham:compose-ratingbar:1.2.3")
+
+    //google maps for android sdk
+    implementation("com.google.android.gms:play-services-maps:19.0.0")
 }
 
 kapt {

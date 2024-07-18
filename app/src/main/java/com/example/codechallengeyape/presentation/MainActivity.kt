@@ -10,6 +10,7 @@ import com.example.codechallengeyape.framework.viewModels.MainViewModel
 import com.example.codechallengeyape.presentation.base.BaseActivity
 import com.example.codechallengeyape.presentation.detail.DetailsFragment
 import com.example.codechallengeyape.presentation.home.HomeFragment
+import com.example.codechallengeyape.presentation.map.LocationFragment
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -20,7 +21,8 @@ class MainActivity : BaseActivity() {
 
     enum class Screens {
         Home,
-        Details
+        Details,
+        Location
     }
 
     override fun createBinding(): View {
@@ -46,11 +48,15 @@ class MainActivity : BaseActivity() {
 
             when(screens) {
                 Screens.Home -> {
+                    // we can alternatively send sata with a bundle
                     replace<HomeFragment>(id, args = bundleOf())
                     return@commit
                 }
                 Screens.Details -> {
                     replace<DetailsFragment>(id)
+                }
+                Screens.Location -> {
+                    replace<LocationFragment>(id)
                 }
             }
 

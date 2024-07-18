@@ -24,7 +24,9 @@ class HomeFragment: BaseFragment(), RecipesAdapter.RecipeCallback {
     }
 
     override fun setupUiBehavior() {
-        parentViewModel.getRecipes()
+        if (parentViewModel.recipes.value == null) {
+            parentViewModel.getRecipes()
+        }
     }
 
     override fun subscribeToEvents() {
