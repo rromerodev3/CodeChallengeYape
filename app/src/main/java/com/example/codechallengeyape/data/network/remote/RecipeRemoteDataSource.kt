@@ -14,4 +14,10 @@ class RecipeRemoteDataSource @Inject constructor(
             recipeService.getRecipes()
         }
     }
+
+    override suspend fun getRecipe(): ResultData<Recipe> {
+        return safeApiCall("Error getting recipe") {
+            recipeService.getRecipe()
+        }
+    }
 }

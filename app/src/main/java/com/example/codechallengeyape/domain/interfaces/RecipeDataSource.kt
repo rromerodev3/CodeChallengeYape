@@ -5,4 +5,5 @@ import com.example.codechallengeyape.domain.models.Recipe
 
 interface RecipeDataSource {
     suspend fun getRecipes(): ResultData<List<Recipe>>
+    suspend fun getRecipe(): ResultData<Recipe>
 }
