@@ -2,8 +2,9 @@ package com.example.codechallengeyape.presentation.map
 
 import android.os.Bundle
 import android.view.View
-import androidx.fragment.app.Fragment
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.activityViewModels
+import com.example.codechallengeyape.R
 import com.example.codechallengeyape.framework.viewModels.MainViewModel
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.SupportMapFragment
@@ -26,6 +27,10 @@ class LocationFragment: SupportMapFragment() {
                 )
                 map.moveCamera(CameraUpdateFactory.newLatLngZoom(house, 16.0f))
             }
+        }
+
+        (requireActivity() as AppCompatActivity).supportActionBar?.let { actionBar ->
+            actionBar.title = getString(R.string.location_title)
         }
     }
 }

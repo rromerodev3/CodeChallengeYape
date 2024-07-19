@@ -2,14 +2,19 @@ package com.example.codechallengeyape.presentation.home
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.Filterable
 import androidx.recyclerview.widget.RecyclerView
 import com.example.codechallengeyape.databinding.RecipeItemBinding
 import com.example.codechallengeyape.domain.models.Recipe
 
 class RecipesAdapter(
-    private val recipes: List<Recipe>,
+    private val initialRecipesList: List<Recipe>,
     private val recipeCallback: RecipeCallback
-): RecyclerView.Adapter<RecipesAdapter.RecipeViewHolder>() {
+): RecyclerView.Adapter<RecipesAdapter.RecipeViewHolder>(), Filterable {
+
+    private val showingRecipesList = mutableListOf<Recipe>().apply {
+        addAll(initialRecipesList)
+    }
 
     interface RecipeCallback {
         fun onRecipeSelected(recipe: Recipe)
@@ -26,12 +31,12 @@ class RecipesAdapter(
     }
 
     override fun onBindViewHolder(holder: RecipeViewHolder, position: Int) {
-        val currentRecipe = recipes[position]
+        val currentRecipe =  showingRecipesList[position]
         holder.bind(currentRecipe, recipeCallback)
         recipeCallback
     }
 
-    override fun getItemCount() = recipes.size
+    override fun getItemCount() = showingRecipesList.size
 
     class RecipeViewHolder(
         private val binding: RecipeItemBinding
@@ -43,4 +48,10 @@ class RecipesAdapter(
             }
         }
     }
+
+    override fun getFilter() = RecipesFilter(
+        this,
+        initialRecipesList,
+        showingRecipesList
+    )
 }

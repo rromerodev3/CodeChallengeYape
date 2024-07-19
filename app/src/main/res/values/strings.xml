@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">CodeChallengeYape</string>
+    <string name="search_recipe_hit">Search Recipe</string>
+    <string name="home_title">Home</string>
+    <string name="details_title">Details</string>
+    <string name="location_title">Location</string>
+    <string name="search_action">Search</string>
+    <string name="cta_show_location">Show Location</string>
 </resources>
