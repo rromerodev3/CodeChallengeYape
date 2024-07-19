@@ -2,6 +2,6 @@ package com.example.codechallengeyape.data.constants
 
 class Constants {
     companion object {
-        const val BASE_URL = "https://2639df36-fd4a-436a-943e-13a3bbc6b788.mock.pstmn.io/"
+        const val BASE_URL = "https://cfc22d62-3aaf-4de1-9b09-a2366ec4bde5.mock.pstmn.io/"
     }
 }

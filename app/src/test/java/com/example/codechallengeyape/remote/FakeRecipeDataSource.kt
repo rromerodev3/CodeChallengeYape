@@ -47,7 +47,7 @@ class FakeRecipeDataSource: RecipeDataSource {
                 ),
                 image = "https://cdn.dummyjson.com/recipe-images/26.webp",
                 rating = 4.6,
-                mealType = listOf(
+                mealTypes = listOf(
                     "Snack",
                     "Side Dish"
                 ),

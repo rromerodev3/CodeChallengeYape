@@ -12,6 +12,6 @@ data class Recipe(
     val tags: List<String>,
     val image: String,
     val rating: Double,
-    val mealType: List<String>,
+    val mealTypes: List<String>,
     val location: Location
 )

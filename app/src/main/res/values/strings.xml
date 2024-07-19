@@ -6,4 +6,10 @@
     <string name="location_title">Location</string>
     <string name="search_action">Search</string>
     <string name="cta_show_location">Show Location</string>
+    <string name="ingredients_section_title">Ingredients</string>
+    <string name="instructions_section_title">Instructions</string>
+    <string name="tags_section_title">Tags</string>
+    <string name="recipe_difficulty_string">Difficulty</string>
+    <string name="recipe_time_string">Time</string>
+    <string name="recipe_cuisine_string">Cuisine</string>
 </resources>

@@ -19,19 +19,21 @@
             android:id="@+id/rcVwRecipes"
             android:layout_width="match_parent"
             android:layout_height="0dp"
+            android:paddingVertical="8dp"
+            android:clipToPadding="false"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            tools:listitem="@layout/recipe_item"
-            tools:itemCount="5"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            tools:itemCount="5"
+            tools:listitem="@layout/recipe_item" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/cnstLytProgress"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/white"
+            android:background="@color/background"
             tools:visibility="gone"
             android:visibility="@{loading? View.VISIBLE : View.GONE}">
 
