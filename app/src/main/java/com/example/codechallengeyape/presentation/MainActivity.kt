@@ -1,5 +1,6 @@
 package com.example.codechallengeyape.presentation
 
+import android.util.Log
 import android.view.View
 import androidx.activity.viewModels
 import androidx.core.os.bundleOf
@@ -32,6 +33,8 @@ class MainActivity : BaseActivity() {
 
     override fun setupUiBehavior() {
         showFragment(Screens.Home)
+        // test ci-cd
+        Log.d("roydev", "setupUiBehavior()")
     }
 
     override fun subscribeToEvents() {
