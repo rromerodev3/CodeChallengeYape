@@ -61,11 +61,12 @@ Se creo una clase para encapsular las respuestas del servidor que simplifica las
 En el caso de ser éxito contiene los datos de la petición y en el caso de ser error contiene los datos correspondientes del error, esto permite que el manejo de las peticiones al servidor ser más fácil de entender.
 
 Git
-El proyecto está contenido dentro de un repositorio esto para el correcto mantenimiento de las versiones del mismo.
+El proyecto está contenido dentro de un repositorio esto para el correcto mantenimiento de las versiones del mismo: 
+url del repostitorio: https://github.com/rromerodev3/CodeChallengeYape.git
 
 Gitflow   
 El repositorio del proyecto utiliza Gitflow como estrategia para el manejo de branching, esta estrategia define ramas para versiones específicas como por ejemplo development, feature y release. Una vez que una versión esta lista se crea un tag con la version correspondiente, toda la elaboración del challengue fue realizada con gitflow y se podrá validar al analizar el repositorio.
-
+url del repostitorio: https://github.com/rromerodev3/CodeChallengeYape.git
 
 
 Extra
