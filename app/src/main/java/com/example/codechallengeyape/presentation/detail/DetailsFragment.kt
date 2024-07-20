@@ -659,7 +659,7 @@ private fun PrevRecipeButton() {
     RecipeLocationButton(openLocation = { },)
 }
 
-@Preview(heightDp = 1200)
+@Preview(heightDp = 1500)
 @Composable
 private fun PreviewRecipeDetails() {
     RecipeDetailsContent(
